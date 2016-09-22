@@ -115,55 +115,11 @@ Finally, properties are what give the selected elements of a rule declaration th
 
 ### OOCSS and BEM
 
-We encourage some combination of OOCSS and BEM for these reasons:
+We discourage the use of OOCSS and BEM for these reasons:
 
-  * It helps create clear, strict relationships between CSS and HTML
-  * It helps us create reusable, composable components
-  * It allows for less nesting and lower specificity
-  * It helps in building scalable stylesheets
-
-**OOCSS**, or “Object Oriented CSS”, is an approach for writing CSS that encourages you to think about your stylesheets as a collection of “objects”: reusable, repeatable snippets that can be used independently throughout a website.
-
-  * Nicole Sullivan's [OOCSS wiki](https://github.com/stubbornella/oocss/wiki)
-  * Smashing Magazine's [Introduction to OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
-
-**BEM**, or “Block-Element-Modifier”, is a _naming convention_ for classes in HTML and CSS. It was originally developed by Yandex with large codebases and scalability in mind, and can serve as a solid set of guidelines for implementing OOCSS.
-
-  * CSS Trick's [BEM 101](https://css-tricks.com/bem-101/)
-  * Harry Roberts' [introduction to BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
-
-We recommend a variant of BEM with PascalCased “blocks”, which works particularly well when combined with components (e.g. React). Underscores and dashes are still used for modifiers and children.
-
-**Example**
-
-```jsx
-// ListingCard.jsx
-function ListingCard() {
-  return (
-    <article class="ListingCard ListingCard--featured">
-
-      <h1 class="ListingCard__title">Adorable 2BR in the sunny Mission</h1>
-
-      <div class="ListingCard__content">
-        <p>Vestibulum id ligula porta felis euismod semper.</p>
-      </div>
-
-    </article>
-  );
-}
-```
-
-```css
-/* ListingCard.css */
-.ListingCard { }
-.ListingCard--featured { }
-.ListingCard__title { }
-.ListingCard__content { }
-```
-
-  * `.ListingCard` is the “block” and represents the higher-level component
-  * `.ListingCard__title` is an “element” and represents a descendant of `.ListingCard` that helps compose the block as a whole.
-  * `.ListingCard--featured` is a “modifier” and represents a different state or variation on the `.ListingCard` block.
+  * It is more difficult to read
+  * It defeats the point of "cascading" rules
+  * It eliminates most of the benefits of SASS
 
 ### ID selectors
 
